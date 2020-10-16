@@ -1,42 +1,73 @@
+import {
+  Link as ChakraLink,
+  Text,
+  Code,
+  List,
+  ListIcon,
+  ListItem,
+} from "@chakra-ui/core";
+import { CheckCircleIcon, LinkIcon } from "@chakra-ui/icons";
+
+import { Hero } from "../components/Hero";
+import { Container } from "../components/Container";
+import { Main } from "../components/Main";
+import { DarkModeSwitch } from "../components/DarkModeSwitch";
+import { CTA } from "../components/CTA";
+import { Footer } from "../components/Footer";
 import Head from "next/head";
-import Link from "next/link";
-import styles from "../styles/Home.module.css";
 
-const Home = () => {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>A-Y-A</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/flatly/bootstrap.min.css" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+const Index = () => (
+  <>
+    <Head>
+      <title>AquiYAhora</title>
+      <link
+        href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap"
+        rel="stylesheet"
+      ></link>
+    </Head>
+    <Container height="100vh">
+      <Hero />
+      <Main>
+        <Text>
+          Example repository of <Code>Next.js</Code> + <Code>chakra-ui</Code> +{" "}
+          <Code>typescript</Code>.
+        </Text>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Bienvenidos a <a href="https://nextjs.org">Aqui Y Ahora!</a>
-        </h1>
+        <List spacing={3} my={0}>
+          <ListItem>
+            <ListIcon as={CheckCircleIcon} color="green.500" />
+            <ChakraLink
+              isExternal
+              href="https://chakra-ui.com"
+              flexGrow={1}
+              mr={2}
+            >
+              Chakra UI
+              <LinkIcon />
+            </ChakraLink>
+          </ListItem>
+          <ListItem>
+            <ListIcon as={CheckCircleIcon} color="green.500" />
+            <ChakraLink
+              isExternal
+              href="https://nextjs.org"
+              flexGrow={1}
+              mr={2}
+            >
+              Next.js
+              <LinkIcon />
+            </ChakraLink>
+          </ListItem>
+        </List>
+      </Main>
 
-        <p className={styles.description}>
-          Lo que Buscas, en el momento que lo Buscas{" "}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-        <Link href="/entities">
-          <a className="navbar-brand">Entities</a>
-        </Link>
-      </main>
+      {/* <DarkModeSwitch /> */}
+      <Footer>
+        <Text>Next ❤️ Chakra</Text>
+      </Footer>
+      <CTA />
+    </Container>
+  </>
+);
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  );
-};
-
-export default Home;
+export default Index;
