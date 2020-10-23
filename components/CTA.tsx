@@ -5,6 +5,7 @@ import {
   Icon,
   SimpleGrid,
   Center,
+  Text,
 } from "@chakra-ui/core";
 import { MdHome, MdSearch, MdExplore } from "react-icons/md";
 
@@ -24,21 +25,36 @@ export const CTA = () => (
       bg="gray.300"
       pos="absolute"
       w="100%"
-      h="50px"
+      h="65px"
       left="0px"
       bottom="0"
       boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)">
       {/* <SimpleGrid columns={[3, null, 4]} spacing={20}> */}
       <Box display="flex" alignItems="center" justifyContent="space-between">
-        <ChakraLink>
-          <Icon as={MdHome} boxSize={12} color="red.500" />
-        </ChakraLink>
-        <ChakraLink>
-          <Icon as={MdSearch} boxSize={12} color="red.500" />
-        </ChakraLink>
-        <ChakraLink>
-          <Icon as={MdExplore} boxSize={12} color="red.500" />
-        </ChakraLink>
+        <Box>
+          <ChakraLink>
+            <Icon as={MdHome} boxSize={12} color="red.500" />
+          </ChakraLink>
+          <Text textAlign="center" fontSize="12px" color="red.500">
+            Home
+          </Text>
+        </Box>
+        <Box>
+          <ChakraLink>
+            <Icon as={MdSearch} boxSize={12} color="red.500" />
+          </ChakraLink>
+          <Text textAlign="center" fontSize="12px" color="red.500">
+            Buscar
+          </Text>
+        </Box>
+        <Box>
+          <ChakraLink>
+            <Icon as={MdExplore} boxSize={12} color="red.500" />
+          </ChakraLink>
+          <Text textAlign="center" fontSize="12px" color="red.500">
+            Explorar
+          </Text>
+        </Box>
       </Box>
       {/* </SimpleGrid> */}
     </Box>
