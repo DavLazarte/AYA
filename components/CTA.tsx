@@ -1,44 +1,51 @@
-import { Link as ChakraLink, Box,Flex, Icon, SimpleGrid, Center  } from "@chakra-ui/core";
-import { MdHome,MdSearch,MdExplore } from "react-icons/md"
+import {
+  Link as ChakraLink,
+  Box,
+  Flex,
+  Icon,
+  SimpleGrid,
+  Center,
+} from "@chakra-ui/core";
+import { MdHome, MdSearch, MdExplore } from "react-icons/md";
 
-import {Container} from "../components/Container"
+import { Container } from "../components/Container";
 
 export const CTA = () => (
-<Container flexDirection="row"
+  <Container
+    flexDirection="row"
     position="fixed"
     bottom="0"
     width="100%"
     // maxWidth="48rem"
     // py={2}
-    >
-  <Box
-    as="nav"
-    bg="gray.300"
-    pos="absolute"
-    w="100%"
-    h="64px"
-    left="0px"
-    bottom="0"
-    boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
-    >
-    {/* <SimpleGrid columns={[3, null, 4]} spacing={20}> */}
-    <Box display="flex" alignItems="center"
-    justifyContent="space-between">
-    <ChakraLink>
-      <Icon as={MdHome}  boxSize={16} color="red.500"   />
-    </ChakraLink>
-    <ChakraLink>
-      <Icon as={MdSearch} boxSize={16}  color="red.500"  />
-    </ChakraLink>
-    <ChakraLink >
-      <Icon as={MdExplore} boxSize={16} color="red.500"/>
-    </ChakraLink>
+  >
+    <Box
+      as="nav"
+      bg="gray.300"
+      pos="absolute"
+      w="100%"
+      h="50px"
+      left="0px"
+      bottom="0"
+      boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)">
+      {/* <SimpleGrid columns={[3, null, 4]} spacing={20}> */}
+      <Box display="flex" alignItems="center" justifyContent="space-between">
+        <ChakraLink>
+          <Icon as={MdHome} boxSize={12} color="red.500" />
+        </ChakraLink>
+        <ChakraLink>
+          <Icon as={MdSearch} boxSize={12} color="red.500" />
+        </ChakraLink>
+        <ChakraLink>
+          <Icon as={MdExplore} boxSize={12} color="red.500" />
+        </ChakraLink>
+      </Box>
+      {/* </SimpleGrid> */}
     </Box>
-    {/* </SimpleGrid> */}
-  </Box>
-</Container>
+  </Container>
 );
-{/* 
+{
+  /* 
    <Container
     flexDirection="row"
     position="fixed"
@@ -62,4 +69,5 @@ export const CTA = () => (
         View Repo
       </Button>
     </ChakraLink> 
-  </Container>*/}
+  </Container>*/
+}

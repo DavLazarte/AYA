@@ -1,0 +1,27 @@
+{
+  "name": "a-y-a",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@chakra-ui/core": "^1.0.0-rc.5",
+    "@chakra-ui/icons": "^1.0.0-rc.5",
+    "@chakra-ui/modal": "^1.0.0-next.3",
+    "isomorphic-fetch": "^3.0.0",
+    "next": "9.5.3",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-icons": "^3.11.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.11.2",
+    "@types/react": "^16.9.49",
+    "@types/react-dom": "^16.9.8",
+    "es6-promise": "^4.2.8",
+    "typescript": "^4.0.3"
+  }
+}

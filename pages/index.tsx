@@ -22,12 +22,11 @@ const Index = () => (
       <title>AquiYAhora</title>
       <link
         href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap"
-        rel="stylesheet"
-      ></link>
+        rel="stylesheet"></link>
     </Head>
-    <Container height="100vh">
+    <Container>
       <Hero />
-      <Main>
+      {/* <Main>
         <Text>
           Example repository of <Code>Next.js</Code> + <Code>chakra-ui</Code> +{" "}
           <Code>typescript</Code>.
@@ -59,7 +58,7 @@ const Index = () => (
             </ChakraLink>
           </ListItem>
         </List>
-      </Main>
+      </Main> */}
 
       {/* <DarkModeSwitch /> */}
       <Footer>
