@@ -1,12 +1,9 @@
 import Head from "next/head";
 import Entity from "../components/entity/EntityComponent";
-import Header from "../components/permanent/Header";
-import Footer from "../components/permanent/Footer";
 import fetch from "isomorphic-fetch";
 const Enti = (props) => {
   return (
     <>
-      <Header />
       <Head>
         <title>Categoria</title>
         <link
@@ -15,7 +12,6 @@ const Enti = (props) => {
         />
       </Head>
       <Entity entities={props.entities} />
-      <Footer />
     </>
   );
 };
