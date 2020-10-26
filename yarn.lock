@@ -1525,12 +1525,28 @@
     "@types/tinycolor2" "1.4.2"
     tinycolor2 "1.4.1"
 
+"@chakra-ui/theme-tools@^1.0.0-next.3":
+  version "1.0.0-next.3"
+  resolved "https://registry.yarnpkg.com/@chakra-ui/theme-tools/-/theme-tools-1.0.0-next.3.tgz#604b03a616d3703a94e2bbaf764547c9f69c5657"
+  integrity sha512-5W8MH1L+3Q4dcCb4urjtcCQXtUUxCPTwvbJmlw6OhypiUj+4AvgYBhCjSGPSvF/eK23CH2cBg8SddweE31VfHw==
+  dependencies:
+    "@chakra-ui/utils" "^1.0.0-next.3"
+    "@types/tinycolor2" "1.4.2"
+    tinycolor2 "1.4.1"
+
 "@chakra-ui/theme@1.0.0-rc.5":
   version "1.0.0-rc.5"
   resolved "https://registry.yarnpkg.com/@chakra-ui/theme/-/theme-1.0.0-rc.5.tgz#fd275f770d190cdc52018fad6071fefa1360df65"
   integrity sha512-xSM4dp9fwp885IfqfyZ3yVrgYfIxxd/Sl6Az8HJsVHM9uWteyjzMIPf7Svtn4ft59XW79Vq6OqPyBWvsETinYg==
   dependencies:
     "@chakra-ui/theme-tools" "1.0.0-rc.5"
+
+"@chakra-ui/theme@^1.0.0-next.3":
+  version "1.0.0-next.3"
+  resolved "https://registry.yarnpkg.com/@chakra-ui/theme/-/theme-1.0.0-next.3.tgz#e652154ce77bb8505df2b634a1bc3be7ee409ee0"
+  integrity sha512-ndQCzUwnohx+HZG/mlaMnoRyGd3VIKvb01fDimpRQqH5xibPvC8tGo8vPce7KNohW0HHsATj5GZr7z/FgckRMw==
+  dependencies:
+    "@chakra-ui/theme-tools" "^1.0.0-next.3"
 
 "@chakra-ui/toast@1.0.0-rc.5":
   version "1.0.0-rc.5"

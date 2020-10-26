@@ -5,28 +5,33 @@ import {
   Flex,
   Text,
   Box,
+  Stack,
 } from "@chakra-ui/core";
 import { Search2Icon } from "@chakra-ui/icons";
 
 export const Search = () => (
-  <Flex boxSize={["sm", "md", "lg", "xl"]} justify="center" mt={[2, 4, 6, 8]}>
-    <InputGroup>
-      <Input variant="filled" placeholder="Tenes hambre?, Se te rompio algo?" />
-      <InputRightElement
-        pointerEvents="none"
-        children={<Search2Icon color="gray.300" />}
-      />
-    </InputGroup>
+  <Flex mt={[2, 4, 6, 8]} justify="center">
+    <Stack spacing={4}>
+      <Box>
+        <InputGroup>
+          <Input variant="filled" placeholder="Busca aqui y ahora" />
+          <InputRightElement
+            pointerEvents="none"
+            children={<Search2Icon color="gray.300" />}
+          />
+        </InputGroup>
+      </Box>
+    </Stack>
     <Text
       pos="absolute"
       color="white"
       fontFamily="ABeeZee"
       fontWeight="normal"
-      fontSize="20px"
+      fontSize="15px"
       fontStyle="normal"
       textAlign="center"
-      p={12}>
-      Lo que Buscas cuando lo Buscas
+      mt={[12, 14, 16]}>
+      Aqui y ahora lo que queres encontrar
     </Text>
   </Flex>
 );

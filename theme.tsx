@@ -7,7 +7,7 @@ const fonts = {
 };
 
 const breakpoints = ["30em", "48em", "62em", "80em"];
-// // aliases
+// aliases
 // breakpoints.sm = breakpoints[0];
 // breakpoints.md = breakpoints[1];
 // breakpoints.lg = breakpoints[2];
