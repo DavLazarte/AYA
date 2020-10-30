@@ -1,14 +1,4 @@
-import {
-  Stack,
-  Flex,
-  Box,
-  Avatar,
-  AvatarGroup,
-  Link as ChakraLink,
-  Icon,
-  Text,
-  IconButton,
-} from "@chakra-ui/core";
+import { Box, Link as ChakraLink, Text, IconButton } from "@chakra-ui/core";
 import { FaHamburger, FaHandsHelping } from "react-icons/fa";
 import { BiHealth } from "react-icons/bi";
 

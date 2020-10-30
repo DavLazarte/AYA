@@ -6,8 +6,9 @@ import {
   Text,
   Box,
   Stack,
+  IconButton,
 } from "@chakra-ui/core";
-import { Search2Icon } from "@chakra-ui/icons";
+import { MdSearch } from "react-icons/md";
 
 export const Search = () => (
   <Flex mt={[2, 4, 6, 8]} justify="center">
@@ -15,10 +16,7 @@ export const Search = () => (
       <Box>
         <InputGroup>
           <Input variant="filled" placeholder="Busca aqui y ahora" />
-          <InputRightElement
-            pointerEvents="none"
-            children={<Search2Icon color="gray.300" />}
-          />
+          <IconButton aria-label="Search database" icon={<MdSearch />} />
         </InputGroup>
       </Box>
     </Stack>
