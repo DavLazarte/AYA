@@ -1,13 +1,14 @@
 import { Flex, Heading, Box, Center, Text } from "@chakra-ui/core";
 
 export const NavBar = () => (
-  <Flex justifyContent="center">
+  <Flex justifyContent="center" mb={16}>
     <Box
       as="nav"
       bg="red.500"
       pos="absolute"
       w="100%"
       h="55px"
+
       // pl="0px"
       // pt="0px"
     >

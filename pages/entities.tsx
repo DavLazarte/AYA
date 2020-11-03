@@ -9,6 +9,9 @@ import {
   UnorderedList,
   Heading,
   Text,
+  SimpleGrid,
+  Stack,
+  HStack,
 } from "@chakra-ui/core";
 import { Entity } from "../interfaces/index";
 import { NavBar } from "../components/NavbarComponent";
@@ -33,38 +36,50 @@ const Entities: NextPage<Props> = ({ items }) => {
           rel="stylesheet"></link>
       </Head>
       <NavBar />
-      {/* <SimpleGrid minChildWidth="120px" spacing="40px"> */}
+      {/* <SimpleGrid minChildWidth="120px" spacing="10"> */}
       {items.map((item) => (
-        <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
-          <Image src={item.imagePath} alt="Imagen" />
-          <Box p="6">
-            <Box d="flex" alignItems="baseline">
-              <Badge borderRadius="full" px="2" colorScheme="teal">
-                Categorias
-              </Badge>
-              {item.category.map((cate) => (
-                <Box
-                  color="gray.500"
-                  fontWeight="semibold"
-                  letterSpacing="wide"
-                  fontSize="xs"
-                  textTransform="uppercase"
-                  ml="2">
-                  &bull; {cate.subcategory}
-                </Box>
-              ))}
+        <Box m={5} maxW="sm" borderWidth="3px" borderRadius="lg">
+          <HStack spacing={1}>
+            <Box>
+              <Image
+                src={item.imagePath}
+                alt="Imagen"
+                borderRadius="full"
+                boxSize="50px"
+                m="2"
+              />
             </Box>
-            <Box
-              mt="1"
-              fontWeight="semibold"
-              as="h4"
-              lineHeight="tight"
-              isTruncated>
-              {item.name}
+            <Box p="6">
+              <Box d="flex" alignItems="baseline">
+                {item.category.map((cate) => (
+                  <Box
+                    color="gray.500"
+                    fontWeight="semibold"
+                    letterSpacing="wide"
+                    fontSize="xs"
+                    textTransform="uppercase"
+                    ml="2">
+                    <Badge borderRadius="full" px="2" colorScheme="teal">
+                      &bull; {cate.subcategory}
+                    </Badge>
+                  </Box>
+                ))}
+              </Box>
             </Box>
+          </HStack>
+          <Box
+            mt="1"
+            ml="3"
+            mr="3"
+            letterSpacing="wide"
+            fontWeight="semibold"
+            as="h4"
+            lineHeight="tight"
+            isTruncated>
+            {item.name}
+            <Text>{item.location.address}</Text>
+            <Text>{item.contact.cellphone}</Text>
           </Box>
-          <Text>Dirección: {item.location.address}</Text>
-          <Text>Contacto: {item.contact.cellphone}</Text>
         </Box>
       ))}
       {/* </SimpleGrid> */}
