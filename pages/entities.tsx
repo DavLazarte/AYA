@@ -38,7 +38,7 @@ const Entities: NextPage<Props> = ({ items }) => {
       <NavBar />
       {/* <SimpleGrid minChildWidth="120px" spacing="10"> */}
       {items.map((item) => (
-        <Box m={5} maxW="sm" borderWidth="3px" borderRadius="lg">
+        <Box m={5} maxW="sm" borderWidth="3px" borderRadius="lg" key={item._id}>
           <HStack spacing={1}>
             <Box>
               <Image
@@ -89,7 +89,7 @@ const Entities: NextPage<Props> = ({ items }) => {
 };
 
 Entities.getInitialProps = async (ctx) => {
-  const res = await fetch("http://localhost:4000/entities");
+  const res = await fetch("https://api-aya.herokuapp.com/entities");
   const resJSON = await res.json();
   return { items: resJSON };
 };
