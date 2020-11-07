@@ -16,6 +16,7 @@ import {
 import { Entity } from "../interfaces/index";
 import { NavBar } from "../components/NavbarComponent";
 import { CTA } from "../components/CTA";
+import { Container } from "../components/Container";
 import fetch from "isomorphic-fetch";
 
 type Props = {
@@ -35,61 +36,70 @@ const Entities: NextPage<Props> = ({ items }) => {
           href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap"
           rel="stylesheet"></link>
       </Head>
-      <NavBar />
-      {/* <SimpleGrid minChildWidth="120px" spacing="10"> */}
-      {items.map((item) => (
-        <Box m={5} maxW="sm" borderWidth="3px" borderRadius="lg" key={item._id}>
-          <HStack spacing={1}>
-            <Box>
-              <Image
-                src={item.imagePath}
-                alt="Imagen"
-                borderRadius="full"
-                boxSize="50px"
-                m="2"
-              />
-            </Box>
-            <Box p="6">
-              <Box d="flex" alignItems="baseline">
-                {item.category.map((cate) => (
-                  <Box
-                    color="gray.500"
-                    fontWeight="semibold"
-                    letterSpacing="wide"
-                    fontSize="xs"
-                    textTransform="uppercase"
-                    ml="2">
-                    <Badge borderRadius="full" px="2" colorScheme="teal">
-                      &bull; {cate.subcategory}
-                    </Badge>
-                  </Box>
-                ))}
-              </Box>
-            </Box>
-          </HStack>
+      <Container>
+        <NavBar />
+        {/* <SimpleGrid minChildWidth="120px" spacing="10"> */}
+        {items.map((item) => (
           <Box
-            mt="1"
-            ml="3"
-            mr="3"
-            letterSpacing="wide"
-            fontWeight="semibold"
-            as="h4"
-            lineHeight="tight"
-            isTruncated>
-            {item.name}
-            <Text>{item.location.address}</Text>
-            <Text>{item.contact.cellphone}</Text>
+            m={5}
+            maxW="sm"
+            borderWidth="3px"
+            borderRadius="lg"
+            key={item._id}>
+            <HStack spacing={1}>
+              <Box>
+                <Image
+                  src={item.imagePath}
+                  alt="Imagen"
+                  borderRadius="full"
+                  boxSize="50px"
+                  m="2"
+                />
+              </Box>
+              <Box p="6">
+                <Box d="flex" alignItems="baseline">
+                  {item.category.map((cate) => (
+                    <Box
+                      color="gray.500"
+                      fontWeight="semibold"
+                      letterSpacing="wide"
+                      fontSize="xs"
+                      textTransform="uppercase"
+                      ml="2"
+                      key={item._id}>
+                      <Badge borderRadius="full" px="2" colorScheme="teal">
+                        &bull; {cate.subcategory}
+                      </Badge>
+                    </Box>
+                  ))}
+                </Box>
+              </Box>
+            </HStack>
+            <Box
+              mt="1"
+              ml="3"
+              mr="3"
+              letterSpacing="wide"
+              fontWeight="semibold"
+              as="h4"
+              lineHeight="tight"
+              isTruncated>
+              {item.name}
+              <Text>{item.location.address}</Text>
+              <Text>{item.contact.cellphone}</Text>
+            </Box>
           </Box>
-        </Box>
-      ))}
-      {/* </SimpleGrid> */}
-      <CTA />
+        ))}
+        {/* </SimpleGrid> */}
+        <CTA />
+      </Container>
     </>
   );
 };
 
 Entities.getInitialProps = async (ctx) => {
-  const res = await fetch("https://api-aya.herokuapp.com/entities");
+  // const res = await fetch("https://api-aya.herokuapp.com/entities");
+  const res = await fetch("http://localhost:8080/entities");
   const resJSON = await res.json();
   return { items: resJSON };
 };

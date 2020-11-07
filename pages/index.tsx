@@ -62,7 +62,7 @@ const Index = () => (
 
       {/* <DarkModeSwitch /> */}
       <Footer>
-        <Text>Next ❤️ Chakra</Text>
+        <Text>aqui ❤️ ahora</Text>
       </Footer>
       <CTA />
     </Container>
