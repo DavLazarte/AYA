@@ -98,9 +98,14 @@ const Entities: NextPage<Props> = ({ items }) => {
 };
 
 Entities.getInitialProps = async (ctx) => {
-  // const res = await fetch("http://localhost:8080/entities");
-  const res = await fetch("https://api-aya.herokuapp.com/entities");
-  const resJSON = await res.json();
-  return { items: resJSON };
+  if (process.env.ENV !== "production") {
+    const res = await fetch("http://localhost:8080/entities");
+    const resJSON = await res.json();
+    return { items: resJSON };
+  } else {
+    const res = await fetch("https://api-aya.herokuapp.com/entities");
+    const resJSON = await res.json();
+    return { items: resJSON };
+  }
 };
 export default Entities;
