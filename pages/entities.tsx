@@ -1,18 +1,6 @@
-import { NextPage, NextPageContext } from "next";
+import { NextPage } from "next";
 import Head from "next/head";
-import {
-  Badge,
-  Box,
-  Divider,
-  Image,
-  ListItem,
-  UnorderedList,
-  Heading,
-  Text,
-  SimpleGrid,
-  Stack,
-  HStack,
-} from "@chakra-ui/core";
+import { Badge, Box, Image, Text, HStack } from "@chakra-ui/core";
 import { Entity } from "../interfaces/index";
 import { NavBar } from "../components/NavbarComponent";
 import { CTA } from "../components/CTA";
