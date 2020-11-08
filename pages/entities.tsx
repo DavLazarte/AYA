@@ -98,7 +98,7 @@ const Entities: NextPage<Props> = ({ items }) => {
 };
 
 Entities.getInitialProps = async (ctx) => {
-  if (process.env.ENV !== "production") {
+  if (process.env.ENV == "dev") {
     const res = await fetch("http://localhost:8080/entities");
     const resJSON = await res.json();
     return { items: resJSON };
