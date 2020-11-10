@@ -15,7 +15,7 @@ export const Category = () => (
       "15%", // 62em+
     ]}
     p={2}
-    mt={[40, 48]}>
+    mt={[32, 36, 38]}>
     <Box>
       <IconButton
         borderRadius="full"
@@ -23,7 +23,7 @@ export const Category = () => (
         size="lg"
         variant="outline"
         colorScheme="red"
-        aria-label="Servicios"
+        aria-label="Salud"
         fontSize="30px"
         icon={<BiHealth />}
       />
@@ -38,7 +38,7 @@ export const Category = () => (
         size="lg"
         variant="outline"
         colorScheme="red"
-        aria-label="Servicios"
+        aria-label="Food"
         fontSize="30px"
         icon={<FaHamburger />}
       />

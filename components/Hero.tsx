@@ -8,7 +8,7 @@ export const Hero = () => (
       bg="red.500"
       pos="absolute"
       w="100%"
-      h="255px"
+      h={60}
       borderRadius="0px 0px 20px 20px"
       boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)">
       <Heading

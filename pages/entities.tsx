@@ -1,4 +1,3 @@
-import { NextPage } from "next";
 import Head from "next/head";
 import { Entity } from "../interfaces/index";
 import { NavBar } from "../components/NavbarComponent";
@@ -11,7 +10,7 @@ type Props = {
   items: Entity[];
 };
 
-const Entities: NextPage<Props> = ({ items }) => {
+const Entities = ({ items }: Props) => {
   return (
     <>
       <Head>

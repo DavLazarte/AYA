@@ -1,7 +1,12 @@
-// import { NextPage } from "next";
-import { Box, Badge, Image, Text, HStack } from "@chakra-ui/core";
+import { NextPage } from "next";
+import { Box, Badge, Image, Text, HStack, Stack } from "@chakra-ui/core";
+import { Entity } from "../../interfaces/index";
 
-export const Locales = ({ items }) => {
+type Props = {
+  items: Entity[];
+};
+
+export const Locales: NextPage<Props> = ({ items }) => {
   return (
     <>
       {items.map((item) => (
@@ -42,17 +47,17 @@ export const Locales = ({ items }) => {
             </Box>
           </HStack>
           <Box
-            mt="1"
-            ml="3"
-            mr="3"
+            mt={1}
+            ml={3}
+            mr={3}
             letterSpacing="wide"
             fontWeight="semibold"
             as="h4"
             lineHeight="tight"
             isTruncated>
             {item.name}
-            <Text>{item.location.address}</Text>
-            <Text>{item.contact.cellphone}</Text>
+            <Text textAlign="left">{item.location.address}</Text>
+            <Text textAlign="left">{item.contact.cellphone}</Text>
           </Box>
         </Box>
       ))}
