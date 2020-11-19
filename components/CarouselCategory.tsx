@@ -16,21 +16,23 @@ export const Category = () => (
     ]}
     p={2}
     mt={[32, 36, 38]}>
-    <Box>
-      <IconButton
-        borderRadius="full"
-        bg="white"
-        size="lg"
-        variant="outline"
-        colorScheme="red"
-        aria-label="Salud"
-        fontSize="30px"
-        icon={<BiHealth />}
-      />
-      <Text textAlign="center" color="white">
-        Salud
-      </Text>
-    </Box>
+    <ChakraLink href="/farmacias">
+      <Box>
+        <IconButton
+          borderRadius="full"
+          bg="white"
+          size="lg"
+          variant="outline"
+          colorScheme="red"
+          aria-label="Salud"
+          fontSize="30px"
+          icon={<BiHealth />}
+        />
+        <Text textAlign="center" color="white">
+          Salud
+        </Text>
+      </Box>
+    </ChakraLink>
     <Box>
       <IconButton
         borderRadius="full"

@@ -35,3 +35,17 @@ export type Entity = {
   businesshours: string;
   state: boolean;
 };
+
+export type Farmacia = {
+  _id: number;
+  name: string;
+  location: Location;
+  contact: Contact;
+  imagePath: string;
+  categories: [];
+  subcategories: [];
+  businesshours: string;
+  turno: number;
+  destacada: boolean;
+  state: boolean;
+};

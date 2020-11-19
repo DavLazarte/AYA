@@ -31,7 +31,7 @@ const Index = ({ items }: Props) => {
 };
 Index.getInitialProps = async (ctx) => {
   if (process.env.ENV == "dev") {
-    const res = await fetch("http://localhost:8080/destacadas");
+    const res = await fetch("http://localhost:4000/destacadas");
     const resJSON = await res.json();
     return { items: resJSON };
   } else {
