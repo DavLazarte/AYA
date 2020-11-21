@@ -4,12 +4,12 @@ import { Container } from "../components/Container";
 import { Destacadas } from "../components/entity/HighlightComponent";
 // import { DarkModeSwitch } from "../components/DarkModeSwitch";
 import { CTA } from "../components/CTA";
-import { Entity } from "../interfaces/index";
+import { Farmacia } from "../interfaces/index";
 import { Box } from "@chakra-ui/core";
 import fetch from "isomorphic-fetch";
 
 type Props = {
-  items: Entity[];
+  items: Farmacia[];
 };
 const Index = ({ items }: Props) => {
   return (
@@ -31,7 +31,7 @@ const Index = ({ items }: Props) => {
 };
 Index.getInitialProps = async (ctx) => {
   if (process.env.ENV == "dev") {
-    const res = await fetch("http://localhost:4000/destacadas");
+    const res = await fetch("http://localhost:4000/farmacias");
     const resJSON = await res.json();
     return { items: resJSON };
   } else {

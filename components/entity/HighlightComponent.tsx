@@ -1,5 +1,5 @@
-import { Entity } from "../../interfaces/index";
-import { Locales } from "../entity/EntityComponent";
+import { Farmacia } from "../../interfaces/index";
+import { Locales } from "../farmacias/farmaciasComponent";
 import {
   Heading,
   Box,
@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/core";
 
 type Props = {
-  items: Entity[];
+  items: Farmacia[];
 };
 
 export const Destacadas = ({ items }: Props) => {
