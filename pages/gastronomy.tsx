@@ -38,7 +38,7 @@ LocalsPage.getInitialProps = async (ctx) => {
     const resJSON = await res.json();
     return { items: resJSON };
   } else {
-    const res = await fetch("https://api-aya.herokuapp.com/gastronomy");
+    const res = await fetch("https://api-aya.herokuapp.com/localsgas");
     const resJSON = await res.json();
     return { items: resJSON };
   }
