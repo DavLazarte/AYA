@@ -25,6 +25,13 @@ type Category = {
   subcategory: string;
   state: boolean;
 };
+
+type Menu = {
+  name: string;
+  description: string;
+  price: string;
+  state: boolean;
+};
 export type Entity = {
   _id: number;
   name: string;
@@ -46,6 +53,37 @@ export type Farmacia = {
   subcategories: [];
   businesshours: string;
   turno: number;
+  destacada: boolean;
+  state: boolean;
+};
+
+export type GastronomyLocal = {
+  _id: number;
+  name: string;
+  location: Location;
+  contact: Contact;
+  imagePath: string;
+  categories: [];
+  subcategories: [];
+  menus: Menu;
+  businesshours: string;
+  delivery: boolean;
+  almuerzo: boolean;
+  merienda: boolean;
+  destacada: boolean;
+  state: boolean;
+};
+
+export type Services = {
+  _id: number;
+  name: string;
+  description: string;
+  location: Location;
+  contact: Contact;
+  imagePath: string;
+  categories: [];
+  subcategories: [];
+  businesshours: string;
   destacada: boolean;
   state: boolean;
 };

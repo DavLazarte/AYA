@@ -33,35 +33,39 @@ export const Category = () => (
         </Text>
       </Box>
     </ChakraLink>
-    <Box>
-      <IconButton
-        borderRadius="full"
-        bg="white"
-        size="lg"
-        variant="outline"
-        colorScheme="red"
-        aria-label="Food"
-        fontSize="30px"
-        icon={<FaHamburger />}
-      />
-      <Text textAlign="center" color="white">
-        Food
-      </Text>
-    </Box>
-    <Box>
-      <IconButton
-        borderRadius="full"
-        bg="white"
-        size="lg"
-        variant="outline"
-        colorScheme="red"
-        aria-label="Servicios"
-        fontSize="30px"
-        icon={<FaHandsHelping />}
-      />
-      <Text textAlign="center" color="white">
-        Servicios
-      </Text>
-    </Box>
+    <ChakraLink href="/gastronomy">
+      <Box>
+        <IconButton
+          borderRadius="full"
+          bg="white"
+          size="lg"
+          variant="outline"
+          colorScheme="red"
+          aria-label="Food"
+          fontSize="30px"
+          icon={<FaHamburger />}
+        />
+        <Text textAlign="center" color="white">
+          Food
+        </Text>
+      </Box>
+    </ChakraLink>
+    <ChakraLink href="/services">
+      <Box>
+        <IconButton
+          borderRadius="full"
+          bg="white"
+          size="lg"
+          variant="outline"
+          colorScheme="red"
+          aria-label="Servicios"
+          fontSize="30px"
+          icon={<FaHandsHelping />}
+        />
+        <Text textAlign="center" color="white">
+          Servicios
+        </Text>
+      </Box>
+    </ChakraLink>
   </Box>
 );
