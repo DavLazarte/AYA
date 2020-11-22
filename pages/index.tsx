@@ -35,7 +35,7 @@ Index.getInitialProps = async (ctx) => {
     const resJSON = await res.json();
     return { items: resJSON };
   } else {
-    const res = await fetch("https://api-aya.herokuapp.com/destacadas");
+    const res = await fetch("https://api-aya.herokuapp.com/farmacias");
     const resJSON = await res.json();
     return { items: resJSON };
   }
