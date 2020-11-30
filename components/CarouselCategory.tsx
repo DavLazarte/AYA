@@ -16,7 +16,7 @@ export const Category = () => (
     ]}
     p={2}
     mt={[32, 36, 38]}>
-    <ChakraLink href="/farmacias">
+    <ChakraLink href="/salud">
       <Box>
         <IconButton
           borderRadius="full"

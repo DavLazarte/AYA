@@ -1,13 +1,14 @@
+import { GetStaticProps, GetServerSideProps } from "next";
 import Head from "next/head";
-import { Services } from "../interfaces/index";
-import { NavBar } from "../components/NavbarComponent";
+import { Entity } from "../interfaces/index";
+import NavBar from "../components/NavbarComponent";
 import { CTA } from "../components/CTA";
 import { Container } from "../components/Container";
-import { Locales } from "../components/servi/ServicesComponent";
+import { Locales } from "../components/entity/EntityComponent";
 import fetch from "isomorphic-fetch";
 
 type Props = {
-  items: Services[];
+  items: Entity[];
 };
 
 const ServicesPage = ({ items }: Props) => {
@@ -32,15 +33,15 @@ const ServicesPage = ({ items }: Props) => {
   );
 };
 
-ServicesPage.getInitialProps = async (ctx) => {
+export const getServerSideProps: GetServerSideProps = async () => {
   if (process.env.ENV == "dev") {
     const res = await fetch("http://localhost:4000/services");
-    const resJSON = await res.json();
-    return { items: resJSON };
+    const items: Entity[] = await res.json();
+    return { props: { items } };
   } else {
     const res = await fetch("https://api-aya.herokuapp.com/services");
-    const resJSON = await res.json();
-    return { items: resJSON };
+    const items: Entity[] = await res.json();
+    return { props: { items } };
   }
 };
 export default ServicesPage;

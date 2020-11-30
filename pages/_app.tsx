@@ -1,4 +1,5 @@
 import { ChakraProvider } from "@chakra-ui/core";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import theme from "../theme";
 import { AppProps } from "next/app";

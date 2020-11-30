@@ -1,16 +1,17 @@
+import { GetStaticProps } from "next";
 import Head from "next/head";
-import { Farmacia } from "../interfaces/index";
-import { NavBar } from "../components/NavbarComponent";
+import { Entity } from "../interfaces/index";
+import NavBar from "../components/NavbarComponent";
 import { CTA } from "../components/CTA";
 import { Container } from "../components/Container";
-import { Locales } from "../components/farmacias/farmaciasComponent";
+import { Locales } from "../components/entity/EntityComponent";
 import fetch from "isomorphic-fetch";
 
 type Props = {
-  items: Farmacia[];
+  items: Entity[];
 };
 
-const FarmaciasPage = ({ items }: Props) => {
+const SaludPage = ({ items }: Props) => {
   return (
     <>
       <Head>
@@ -32,15 +33,15 @@ const FarmaciasPage = ({ items }: Props) => {
   );
 };
 
-FarmaciasPage.getInitialProps = async (ctx) => {
+export const getStaticProps: GetStaticProps = async () => {
   if (process.env.ENV == "dev") {
-    const res = await fetch("http://localhost:4000/farmacias");
-    const resJSON = await res.json();
-    return { items: resJSON };
+    const res = await fetch("http://localhost:4000/salud");
+    const items: Entity[] = await res.json();
+    return { props: { items } };
   } else {
-    const res = await fetch("https://api-aya.herokuapp.com/farmacias");
-    const resJSON = await res.json();
-    return { items: resJSON };
+    const res = await fetch("https://api-aya.herokuapp.com/salud");
+    const items: Entity[] = await res.json();
+    return { props: { items } };
   }
 };
-export default FarmaciasPage;
+export default SaludPage;

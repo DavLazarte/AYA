@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Entity } from "../interfaces/index";
-import { NavBar } from "../components/NavbarComponent";
+import NavBar from "../components/NavbarComponent";
 import { CTA } from "../components/CTA";
 import { Container } from "../components/Container";
 import { Locales } from "../components/entity/EntityComponent";

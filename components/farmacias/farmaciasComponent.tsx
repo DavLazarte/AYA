@@ -15,13 +15,13 @@ import { MdAddLocation } from "react-icons/md";
 import { FaWhatsapp } from "react-icons/fa";
 
 type Props = {
-  items: Farmacia[];
+  farms: Farmacia[];
 };
 
-export const Locales: NextPage<Props> = ({ items }) => {
+export const LocalesFarm: NextPage<Props> = ({ farms }) => {
   return (
     <>
-      {items.map((item) => (
+      {farms.map((item) => (
         <Box
           m={[3, 5, 7, 9]}
           maxWidth="48rem"

@@ -18,13 +18,6 @@ type Contact = {
   web: string;
   email: string;
 };
-type Category = {
-  _id: number;
-  name: string;
-  description: string;
-  subcategory: string;
-  state: boolean;
-};
 
 type Menu = {
   name: string;
@@ -35,11 +28,19 @@ type Menu = {
 export type Entity = {
   _id: number;
   name: string;
+  description: string;
   location: Location;
   contact: Contact;
   imagePath: string;
-  category: Category[];
+  categories: [];
+  subcategories: [];
   businesshours: string;
+  turno: number;
+  menus: Menu;
+  delivery: boolean;
+  almuerzo: boolean;
+  merienda: boolean;
+  destacada: boolean;
   state: boolean;
 };
 
@@ -53,6 +54,10 @@ export type Farmacia = {
   subcategories: [];
   businesshours: string;
   turno: number;
+  menus: Menu;
+  delivery: boolean;
+  almuerzo: boolean;
+  merienda: boolean;
   destacada: boolean;
   state: boolean;
 };

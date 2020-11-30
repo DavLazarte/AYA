@@ -1,16 +1,17 @@
+import { GetServerSideProps } from "next";
 import Head from "next/head";
-import { GastronomyLocal } from "../interfaces/index";
-import { NavBar } from "../components/NavbarComponent";
+import { Entity } from "../interfaces/index";
+import NavBar from "../components/NavbarComponent";
 import { CTA } from "../components/CTA";
 import { Container } from "../components/Container";
-import { Locales } from "../components/gastronomy/localgastronomyController";
+import { Locales } from "../components/entity/EntityComponent";
 import fetch from "isomorphic-fetch";
 
 type Props = {
-  items: GastronomyLocal[];
+  items: Entity[];
 };
 
-const LocalsPage = ({ items }: Props) => {
+const BaresPage = ({ items }: Props) => {
   return (
     <>
       <Head>
@@ -32,15 +33,15 @@ const LocalsPage = ({ items }: Props) => {
   );
 };
 
-LocalsPage.getInitialProps = async (ctx) => {
+export const getServerSideProps: GetServerSideProps = async () => {
   if (process.env.ENV == "dev") {
-    const res = await fetch("http://localhost:4000/localsgas");
-    const resJSON = await res.json();
-    return { items: resJSON };
+    const res = await fetch("http://localhost:4000/gastronomy");
+    const items: Entity[] = await res.json();
+    return { props: { items } };
   } else {
     const res = await fetch("https://api-aya.herokuapp.com/localsgas");
-    const resJSON = await res.json();
-    return { items: resJSON };
+    const items: Entity[] = await res.json();
+    return { props: { items } };
   }
 };
-export default LocalsPage;
+export default BaresPage;
