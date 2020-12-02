@@ -6,19 +6,27 @@ import { Entity } from "../../interfaces/index";
 import NavBar from "../../components/NavbarComponent";
 import { CTA } from "../../components/CTA";
 import { Container } from "../../components/Container";
-import { Locales } from "../../components/entity/EntityComponent";
-import { MdAddLocation } from "react-icons/md";
+import { MdAddLocation, MdCheck, MdWatchLater, MdClose } from "react-icons/md";
 import { FaWhatsapp } from "react-icons/fa";
+import { FiInstagram } from "react-icons/fi";
+import { SiFacebook } from "react-icons/si";
+import { GiHealthNormal } from "react-icons/gi";
 import {
   Box,
   Badge,
   Image,
   Text,
-  HStack,
+  Divider,
   Heading,
   List,
   ListItem,
   ListIcon,
+  Center,
+  Link as ChakraLink,
+  HStack,
+  Tag,
+  TagLeftIcon,
+  TagLabel,
 } from "@chakra-ui/core";
 type Props = {
   items: Entity;
@@ -26,67 +34,156 @@ type Props = {
 const Local = ({ items }: Props) => {
   return (
     <>
-      {/* {items.map((item) => ( */}
-      <Box
-        m={[3, 5, 7, 9]}
-        maxWidth="48rem"
-        w="90%"
-        borderWidth="3px"
-        borderRadius="lg"
-        key={items._id}>
-        <HStack spacing={2}>
-          <Box>
+      <Head>
+        <title>{items.name}</title>
+        <link
+          rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/flatly/bootstrap.min.css"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap"
+          rel="stylesheet"></link>
+      </Head>
+      <Container>
+        <NavBar />
+        <Box
+          m={[3, 5, 7, 9]}
+          maxWidth="48rem"
+          w="90%"
+          borderWidth="3px"
+          borderRadius="lg"
+          key={items._id}>
+          <Center>
             <Image
               src={items.imagePath}
               alt="Imagen"
               borderRadius="full"
-              boxSize={[9, 14, 18]}
+              boxSize={[36, 40, 44]}
               m="2"
             />
+            <Heading as="h2" size="md" m={[3, 5]}>
+              {items.name}
+            </Heading>
+          </Center>
+          {/*
+          {/* <HStack spacing={2}> */}
+          {/* {items.name ? (
+          ) : (
+            <Heading as="h2" size="md">
+              Hola
+            </Heading>
+          )} */}
+          {/* </HStack> */}
+          <Box p="2">
+            <Box d="flex" alignItems="baseline">
+              {items.subcategories.map((cate, i) => (
+                <Box
+                  color="gray.500"
+                  fontWeight="normal"
+                  letterSpacing="wide"
+                  fontSize="xs"
+                  textTransform="uppercase"
+                  ml="1"
+                  key={i}>
+                  <Badge borderRadius="full" px="1" colorScheme="teal">
+                    &bull; {cate}
+                  </Badge>
+                </Box>
+              ))}
+            </Box>
+            <Text mt={2}>{items.description}</Text>
           </Box>
-          <Heading as="h2" size="md">
-            {items.name}
-          </Heading>
-          {/* onClick={() => router.push("/Entity/[id]", `/entity/${item._id}`)} */}
-        </HStack>
-        <Box p="2">
-          <Box d="flex" alignItems="baseline">
-            {items.subcategories.map((cate, i) => (
-              <Box
-                color="gray.500"
-                fontWeight="normal"
-                letterSpacing="wide"
-                fontSize="xs"
-                textTransform="uppercase"
-                ml="1"
-                key={i}>
-                <Badge borderRadius="full" px="1" colorScheme="teal">
-                  &bull; {cate}
-                </Badge>
-              </Box>
-            ))}
+          <Box
+            m={2}
+            letterSpacing="wide"
+            fontWeight="semibold"
+            // as="h4"
+            lineHeight="tight"
+            isTruncated>
+            <Box d="flex" alignItems="baseline" mb={2}>
+              <ChakraLink href={items.contact.facebook} isExternal>
+                <ListIcon
+                  _visited={{ color: "green.300" }}
+                  as={SiFacebook}
+                  color="green.500"
+                />
+              </ChakraLink>
+              <ChakraLink href={items.contact.instagram} isExternal>
+                <ListIcon as={FiInstagram} color="green.500" />
+              </ChakraLink>
+              {items.turno ? (
+                <Tag size="sm" variant="subtle" colorScheme="green">
+                  <TagLeftIcon boxSize="12px" as={GiHealthNormal} />
+                  <TagLabel>DE TURNO</TagLabel>
+                </Tag>
+              ) : null}
+            </Box>
+            <List spacing={3}>
+              <ListItem>
+                <ListIcon as={MdAddLocation} color="green.500" />
+                {items.location.address} - {items.location.city}
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaWhatsapp} color="green.500" />
+                {items.contact.cellphone}
+              </ListItem>
+              <ListItem>
+                <ListIcon as={MdWatchLater} color="green.500" />
+                {items.businessHours}
+              </ListItem>
+            </List>
           </Box>
+          <Divider />
+          {items.categories.toString().includes("gastronomia") ? (
+            <Box
+              m={3}
+              letterSpacing="wide"
+              fontWeight="semibold"
+              // as="h4"
+              lineHeight="tight"
+              isTruncated
+              d="flex"
+              alignItems="baseline">
+              <HStack spacing={4}>
+                {items.delivery ? (
+                  <Tag size="sm" variant="subtle" colorScheme="green">
+                    <TagLeftIcon boxSize="12px" as={MdCheck} />
+                    <TagLabel>Delivery</TagLabel>
+                  </Tag>
+                ) : (
+                  <Tag size="sm" variant="subtle" colorScheme="red">
+                    <TagLeftIcon boxSize="12px" as={MdClose} />
+                    <TagLabel>Delivery</TagLabel>
+                  </Tag>
+                )}
+                {items.almuerzo ? (
+                  <Tag size="sm" variant="subtle" colorScheme="green">
+                    <TagLeftIcon boxSize="12px" as={MdCheck} />
+                    <TagLabel>Almuerzo</TagLabel>
+                  </Tag>
+                ) : (
+                  <Tag size="sm" variant="subtle" colorScheme="red">
+                    <TagLeftIcon boxSize="12px" as={MdClose} />
+                    <TagLabel>Almuerzo</TagLabel>
+                  </Tag>
+                )}
+                {items.merienda ? (
+                  <Tag size="sm" variant="subtle" colorScheme="green">
+                    <TagLeftIcon boxSize="12px" as={MdCheck} />
+                    <TagLabel>Merienda</TagLabel>
+                  </Tag>
+                ) : (
+                  <Tag size="sm" variant="subtle" colorScheme="red">
+                    <TagLeftIcon boxSize="12px" as={MdClose} />
+                    <TagLabel>Merienda</TagLabel>
+                  </Tag>
+                )}
+              </HStack>
+            </Box>
+          ) : null}
         </Box>
-        <Box
-          m={3}
-          letterSpacing="wide"
-          fontWeight="semibold"
-          // as="h4"
-          lineHeight="tight"
-          isTruncated>
-          <List spacing={3}>
-            <ListItem>
-              <ListIcon as={MdAddLocation} color="green.500" />
-              {items.location.address} - {items.location.city}
-            </ListItem>
-            <ListItem>
-              <ListIcon as={FaWhatsapp} color="green.500" />
-              {items.contact.cellphone}
-            </ListItem>
-          </List>
-        </Box>
-      </Box>
-      {/* ))} */}
+        <CTA />
+      </Container>
     </>
   );
 };

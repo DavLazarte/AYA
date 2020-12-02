@@ -34,7 +34,7 @@ export type Entity = {
   imagePath: string;
   categories: [];
   subcategories: [];
-  businesshours: string;
+  businessHours: string;
   turno: number;
   menus: Menu;
   delivery: boolean;
