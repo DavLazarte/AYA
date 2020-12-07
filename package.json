@@ -16,6 +16,7 @@
     "@types/react-bootstrap": "^0.32.24",
     "bootstrap": "^4.5.3",
     "framer-motion": "^2.9.4",
+    "fuse.js": "^6.4.3",
     "isomorphic-fetch": "^3.0.0",
     "next": "9.5.3",
     "react": "16.13.1",

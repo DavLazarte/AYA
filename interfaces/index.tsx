@@ -37,6 +37,7 @@ export type Entity = {
   businessHours: string;
   turno: number;
   menus: Menu;
+  desayuno: boolean;
   delivery: boolean;
   almuerzo: boolean;
   merienda: boolean;

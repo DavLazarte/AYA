@@ -15,9 +15,9 @@ import { Entity } from "../../interfaces/index";
 import { MdAddLocation } from "react-icons/md";
 import { FaWhatsapp } from "react-icons/fa";
 
-type Props = {
-  items: Entity[];
-};
+// type Props = {
+//   items: Entity[];
+// };
 
 export const Locales = ({ items }) => {
   const router = useRouter();
