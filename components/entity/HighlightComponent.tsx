@@ -24,7 +24,7 @@ type Props = {
 export const Destacadas = ({ items }: Props) => {
   return (
     <>
-      <Box mt={[64, 72, 80]}>
+      <Box mt={[80, 96]}>
         <Center>
           <Heading>Destacados</Heading>
         </Center>
@@ -34,7 +34,7 @@ export const Destacadas = ({ items }: Props) => {
               <Box
                 m={[5, 7, 9, 12]}
                 maxWidth="48rem"
-                w="90%"
+                // w="90%"
                 borderWidth="3px"
                 borderRadius="lg">
                 <HStack spacing={2}>

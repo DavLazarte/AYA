@@ -14,8 +14,8 @@ export const Category = () => (
       "25%", // 48em-62em
       "15%", // 62em+
     ]}
-    p={2}
-    mt={[32, 36, 38]}>
+    p={1}
+    mt={[12, 16, 20]}>
     <ChakraLink href="/salud">
       <Box>
         <IconButton

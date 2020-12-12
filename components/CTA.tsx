@@ -23,7 +23,7 @@ export const CTA = () => (
           </Text>
         </Box>
         <Box>
-          <ChakraLink>
+          <ChakraLink href="/search">
             <Icon as={MdSearch} boxSize={12} color="red.500" />
           </ChakraLink>
           <Text textAlign="center" fontSize="12px" color="red.500">

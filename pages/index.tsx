@@ -2,6 +2,7 @@ import { GetServerSideProps } from "next";
 import Head from "next/head";
 import { Hero } from "../components/Hero";
 import { Container } from "../components/Container";
+import { CarouselIndex } from "../components/CarouselIndex";
 import { Destacadas } from "../components/entity/HighlightComponent";
 // import { DarkModeSwitch } from "../components/DarkModeSwitch";
 import { CTA } from "../components/CTA";
@@ -18,11 +19,16 @@ const Index = ({ items }: Props) => {
       <Head>
         <title>AquiYAhora</title>
         <link
+          rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/flatly/bootstrap.min.css"
+        />
+        <link
           href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap"
           rel="stylesheet"></link>
       </Head>
       <Container>
         <Hero />
+        <CarouselIndex />
         {/* <DarkModeSwitch /> */}
         <Destacadas items={items} />
         <CTA />

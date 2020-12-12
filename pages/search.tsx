@@ -20,8 +20,8 @@ import { CTA } from "../components/CTA";
 import { Container } from "../components/Container";
 import { Locales } from "../components/entity/EntityComponent";
 import fetch from "isomorphic-fetch";
-import { useState, useEffect } from "react";
-import { MdCheckCircle, MdSearch } from "react-icons/md";
+import { useState } from "react";
+import { MdSearch } from "react-icons/md";
 
 type Props = {
   items: Entity[];
@@ -53,8 +53,6 @@ const SearchPage = ({ items }: Props) => {
       <Container>
         <NavBar />
         <Center>
-          {/* <Stack spacing={4}> */}
-          {/* <Box> */}
           <InputGroup>
             <Input
               variant="outline"
@@ -67,20 +65,6 @@ const SearchPage = ({ items }: Props) => {
               children={<MdSearch color="green.500" fontSize="20px" />}
             />
           </InputGroup>
-          {/* </Box> */}
-          {/* </Stack> */}
-          {/* <Text
-            pos="absolute"
-            color="Black"
-            fontFamily="ABeeZee"
-            fontWeight="normal"
-            fontSize="15px"
-            fontStyle="normal"
-            textAlign="center"
-            mt={[12, 14, 16]}>
-            Aqui y ahora lo que queres encontrar
-          </Text> */}
-          {/* <Search onChange={handleChange} /> */}
         </Center>
         <Box>
           <List spacing={3}>
