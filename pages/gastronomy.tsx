@@ -39,7 +39,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     const items: Entity[] = await res.json();
     return { props: { items } };
   } else {
-    const res = await fetch("https://api-aya.herokuapp.com/localsgas");
+    const res = await fetch("https://api-aya.herokuapp.com/gastronomy");
     const items: Entity[] = await res.json();
     return { props: { items } };
   }

@@ -4,10 +4,8 @@ import { Hero } from "../components/Hero";
 import { Container } from "../components/Container";
 import { CarouselIndex } from "../components/CarouselIndex";
 import { Destacadas } from "../components/entity/HighlightComponent";
-// import { DarkModeSwitch } from "../components/DarkModeSwitch";
 import { CTA } from "../components/CTA";
 import { Entity } from "../interfaces/index";
-import { Box } from "@chakra-ui/core";
 import fetch from "isomorphic-fetch";
 
 type Props = {
