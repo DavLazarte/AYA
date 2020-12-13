@@ -188,12 +188,21 @@ const Local = ({ items }: Props) => {
   );
 };
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch("http://localhost:4000/entities");
-  const locales = await res.json();
-  const paths = locales.map((loc) => ({
-    params: { id: loc._id },
-  }));
-  return { paths, fallback: false };
+  if (process.env.ENV == "dev") {
+    const res = await fetch("http://localhost:4000/entities");
+    const locales = await res.json();
+    const paths = locales.map((loc) => ({
+      params: { id: loc._id },
+    }));
+    return { paths, fallback: false };
+  } else {
+    const res = await fetch("https://api-aya.herokuapp.com/entities");
+    const locales = await res.json();
+    const paths = locales.map((loc) => ({
+      params: { id: loc._id },
+    }));
+    return { paths, fallback: false };
+  }
 };
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   if (process.env.ENV == "dev") {
@@ -201,7 +210,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     const items: Entity = await res.json();
     return { props: { items } };
   } else {
-    const res = await fetch("https://api-aya.herokuapp.com/entities");
+    const res = await fetch(
+      `https://api-aya.herokuapp.com/entity/${params.id}`
+    );
     const items: Entity[] = await res.json();
     return { props: { items } };
   }
