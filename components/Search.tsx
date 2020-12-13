@@ -11,8 +11,8 @@ import {
   InputLeftElement,
 } from "@chakra-ui/core";
 import { Entity } from "../interfaces/index";
-// import { MdSearch } from "react-icons/md";
-import { SearchIcon } from "@chakra-ui/icons";
+import { MdSearch } from "react-icons/md";
+import SearchIcon from "@chakra-ui/icons";
 import { useState } from "react";
 import { GetStaticProps } from "next";
 type Props = {
@@ -37,7 +37,7 @@ export const Search = ({ items }: Props) => {
           <InputGroup>
             <InputLeftElement
               pointerEvents="none"
-              children={<SearchIcon color="green.500" />}
+              children={<MdSearch color="green.500" />}
             />
             <Input
               variant="filled"

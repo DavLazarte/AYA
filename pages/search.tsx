@@ -1,27 +1,28 @@
+import { useRouter } from "next/router";
+import Link from "next/link";
 import {
   Center,
   Box,
-  List,
-  ListItem,
-  ListIcon,
   InputGroup,
+  Divider,
   Input,
   Text,
   Stack,
-  IconButton,
-  InputRightElement,
+  Avatar,
+  InputLeftElement,
+  Heading,
 } from "@chakra-ui/core";
-import { Search } from "../components/Search";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import { Entity } from "../interfaces/index";
 import NavBar from "../components/NavbarComponent";
 import { CTA } from "../components/CTA";
 import { Container } from "../components/Container";
-import { Locales } from "../components/entity/EntityComponent";
+// import { Locales } from "../components/entity/EntityComponent";
 import fetch from "isomorphic-fetch";
 import { useState } from "react";
 import { MdSearch } from "react-icons/md";
+// import SearchIcon from "@chakra-ui/icons";
 
 type Props = {
   items: Entity[];
@@ -41,7 +42,7 @@ const SearchPage = ({ items }: Props) => {
   return (
     <>
       <Head>
-        <title>Busqueda</title>
+        <title>Buscar</title>
         <link
           rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/flatly/bootstrap.min.css"
@@ -53,25 +54,42 @@ const SearchPage = ({ items }: Props) => {
       <Container>
         <NavBar />
         <Center>
-          <InputGroup>
-            <Input
-              variant="outline"
-              placeholder="Busca aqui y ahora"
-              value={searchTerm}
-              onChange={handleChange}
-            />
-            <InputRightElement
-              pointerEvents="none"
-              children={<MdSearch color="green.500" fontSize="20px" />}
-            />
-          </InputGroup>
+          <Stack spacing={4}>
+            <Heading>¿Que Buscas Hoy?</Heading>
+            <Box
+              borderRadius="10px 10px 10px 10px"
+              boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
+              m={2}>
+              <InputGroup>
+                <InputLeftElement
+                  pointerEvents="none"
+                  fontSize={20}
+                  children={<MdSearch color="green.500" />}
+                />
+                <Input
+                  variant="filled"
+                  placeholder="Bares, Servicios, Farmacias y Mas"
+                  value={searchTerm}
+                  onChange={handleChange}
+                />
+              </InputGroup>
+            </Box>
+          </Stack>
         </Center>
-        <Box>
-          <List spacing={3}>
-            {results.map((s, i) => (
-              <ListItem key={i}>{s.name}</ListItem>
-            ))}
-          </List>
+        <Box m={2}>
+          {results.map((s, i) => (
+            <Stack key={i}>
+              <Avatar src={s.imagePath} />
+              <Box ml="2">
+                <Text fontWeight="bold">{s.name}</Text>
+                <Text fontSize="sm">{s.location.address}</Text>
+                <Link href="/entity/[id]" as={`/entity/${s._id}`}>
+                  Ver Mas
+                </Link>
+              </Box>
+              <Divider />
+            </Stack>
+          ))}
         </Box>
         <CTA />
       </Container>

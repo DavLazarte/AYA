@@ -4,14 +4,13 @@ import {
   Box,
   Badge,
   Image,
-  Text,
   HStack,
   Heading,
   List,
   ListItem,
   ListIcon,
 } from "@chakra-ui/core";
-import { Entity } from "../../interfaces/index";
+// import { Entity } from "../../interfaces/index";
 import { MdAddLocation } from "react-icons/md";
 import { FaWhatsapp } from "react-icons/fa";
 
