@@ -10,15 +10,15 @@ import {
   ListItem,
   ListIcon,
 } from "@chakra-ui/core";
-// import { Entity } from "../../interfaces/index";
+import { Entity } from "../../interfaces/index";
 import { MdAddLocation } from "react-icons/md";
 import { FaWhatsapp } from "react-icons/fa";
 
-// type Props = {
-//   items: Entity[];
-// };
+type Props = {
+  items: Entity[];
+};
 
-export const Locales = ({ items }) => {
+export const Locales = ({ items }: Props) => {
   const router = useRouter();
   return (
     <>
