@@ -24,11 +24,11 @@ type Props = {
 export const Destacadas = ({ items }: Props) => {
   return (
     <>
-      <Box mt={[80, 96]}>
+      <Box mt={[80, 96]} mb={[5, 7, 9, 12]}>
         <Center>
           <Heading>Destacados</Heading>
         </Center>
-        <Carousel>
+        <Carousel controls={false} indicators={false}>
           {items.map((item) => (
             <Carousel.Item key={item._id}>
               <Box
