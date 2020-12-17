@@ -50,6 +50,7 @@ const Local = ({ items }: Props) => {
           m={[3, 5, 7, 9]}
           maxWidth="48rem"
           w="90%"
+          mb="33%"
           borderWidth="3px"
           borderRadius="lg"
           key={items._id}>
@@ -103,13 +104,18 @@ const Local = ({ items }: Props) => {
             <Box d="flex" alignItems="baseline" mb={2}>
               <ChakraLink href={items.contact.facebook} isExternal>
                 <ListIcon
+                  fontSize="1.4rem"
                   _visited={{ color: "green.300" }}
                   as={SiFacebook}
                   color="green.500"
                 />
               </ChakraLink>
               <ChakraLink href={items.contact.instagram} isExternal>
-                <ListIcon as={FiInstagram} color="green.500" />
+                <ListIcon
+                  fontSize="1.4rem"
+                  as={FiInstagram}
+                  color="green.500"
+                />
               </ChakraLink>
               {items.turno ? (
                 <Tag size="sm" variant="subtle" colorScheme="green">
@@ -182,8 +188,8 @@ const Local = ({ items }: Props) => {
             </Box>
           ) : null}
         </Box>
-        <CTA />
       </Container>
+      <CTA />
     </>
   );
 };

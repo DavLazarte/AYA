@@ -33,8 +33,15 @@ export const Destacadas = ({ items }: Props) => {
             <Carousel.Item key={item._id}>
               <Box
                 m={[5, 7, 9, 12]}
-                maxWidth="48rem"
+                // maxWidth="48rem"
                 // w="90%"
+                width={[
+                  "90%", // 0-30em
+                  "50%", // 30em-48em
+                  "25%", // 48em-62em
+                  "15%", // 62em+
+                ]}
+                p={1}
                 borderWidth="3px"
                 borderRadius="lg">
                 <HStack spacing={2}>

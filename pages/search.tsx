@@ -11,6 +11,7 @@ import {
   Avatar,
   InputLeftElement,
   Heading,
+  Image,
 } from "@chakra-ui/core";
 import { GetStaticProps } from "next";
 import Head from "next/head";
@@ -18,11 +19,9 @@ import { Entity } from "../interfaces/index";
 import NavBar from "../components/NavbarComponent";
 import { CTA } from "../components/CTA";
 import { Container } from "../components/Container";
-// import { Locales } from "../components/entity/EntityComponent";
 import fetch from "isomorphic-fetch";
 import { useState } from "react";
 import { MdSearch } from "react-icons/md";
-// import SearchIcon from "@chakra-ui/icons";
 
 type Props = {
   items: Entity[];
@@ -76,23 +75,36 @@ const SearchPage = ({ items }: Props) => {
             </Box>
           </Stack>
         </Center>
-        <Box m={2}>
-          {results.map((s, i) => (
-            <Stack key={i}>
-              <Avatar src={s.imagePath} />
-              <Box ml="2">
-                <Text fontWeight="bold">{s.name}</Text>
-                <Text fontSize="sm">{s.location.address}</Text>
-                <Link href="/entity/[id]" as={`/entity/${s._id}`}>
-                  Ver Mas
-                </Link>
-              </Box>
-              <Divider />
-            </Stack>
-          ))}
-        </Box>
-        <CTA />
+        {searchTerm === "" ? (
+          <Box mb="33%">
+            <Image
+              opacity="0.5"
+              src="/searchlanding.svg"
+              // bg="tomato"
+              alt="Imagen background"
+              // borderRadius="full"
+              boxSize={[72, 80, 96]}
+              m="1"></Image>
+          </Box>
+        ) : (
+          <Box m={2} mb="33%">
+            {results.map((s, i) => (
+              <Stack key={i}>
+                <Avatar src={s.imagePath} />
+                <Box ml="2">
+                  <Text fontWeight="bold">{s.name}</Text>
+                  <Text fontSize="sm">{s.location.address}</Text>
+                  <Link href="/entity/[id]" as={`/entity/${s._id}`}>
+                    Ver Mas
+                  </Link>
+                </Box>
+                <Divider />
+              </Stack>
+            ))}
+          </Box>
+        )}
       </Container>
+      <CTA />
     </>
   );
 };
