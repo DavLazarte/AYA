@@ -188,8 +188,8 @@ const Local = ({ items }: Props) => {
             </Box>
           ) : null}
         </Box>
-      </Container>
       <CTA />
+      </Container>
     </>
   );
 };

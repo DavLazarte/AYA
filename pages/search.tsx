@@ -103,8 +103,8 @@ const SearchPage = ({ items }: Props) => {
             ))}
           </Box>
         )}
+        <CTA />
       </Container>
-      <CTA />
     </>
   );
 };
