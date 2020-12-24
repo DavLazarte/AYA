@@ -32,7 +32,7 @@ const Index = ({ items }: Props) => {
         <CarouselIndex />
 
         {/* <DarkModeSwitch /> */}
-        <VStack spacing={1}>
+        <VStack spacing={0.25}>
           <Box>
             <Destacadas items={items} />
           </Box>

@@ -11,10 +11,10 @@ import {
 export const BannerCel = () => (
   <>
     <Center>
-      <Heading fontSize="30px">¡Sumate Gratis!</Heading>
+      <Heading fontSize="20px">¡Sumate Gratis!</Heading>
     </Center>
     <Box
-      m={[5, 7, 9, 12]}
+      m={[3, 7, 9, 12]}
       width={[
         "90%", // 0-30em
         "50%", // 30em-48em

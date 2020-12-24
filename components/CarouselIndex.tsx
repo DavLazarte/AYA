@@ -125,7 +125,7 @@ export const CarouselIndex = () => (
                     fontSize="15px"
                     color="black"
                     fontStyle="italic">
-                    Deliverys
+                    Deliveries
                   </Text>
                 </ListItem>
                 <ListItem>
