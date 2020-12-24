@@ -117,12 +117,12 @@ const Local = ({ items }: Props) => {
                   color="green.500"
                 />
               </ChakraLink>
-              {items.turno ? (
+              {/* {items.turno ? (
                 <Tag size="sm" variant="subtle" colorScheme="green">
                   <TagLeftIcon boxSize="12px" as={GiHealthNormal} />
                   <TagLabel>DE TURNO</TagLabel>
                 </Tag>
-              ) : null}
+              ) : null} */}
             </Box>
             <List spacing={3}>
               <ListItem>
@@ -130,8 +130,12 @@ const Local = ({ items }: Props) => {
                 {items.location.address} - {items.location.city}
               </ListItem>
               <ListItem>
-                <ListIcon as={FaWhatsapp} color="green.500" />
-                {items.contact.cellphone}
+                <ChakraLink
+                  href={`https://wa.me/${items.contact.cellphone}?text=Hola!%20te%20encontre%20en%20aqui%20y%20ahora`}
+                  isExternal>
+                  <ListIcon as={FaWhatsapp} color="green.500" />
+                  {items.contact.cellphone}
+                </ChakraLink>
               </ListItem>
               <ListItem>
                 <ListIcon as={MdWatchLater} color="green.500" />
@@ -188,7 +192,7 @@ const Local = ({ items }: Props) => {
             </Box>
           ) : null}
         </Box>
-      <CTA />
+        <CTA />
       </Container>
     </>
   );

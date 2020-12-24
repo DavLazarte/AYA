@@ -3,10 +3,12 @@ import Head from "next/head";
 import { Hero } from "../components/Hero";
 import { Container } from "../components/Container";
 import { CarouselIndex } from "../components/CarouselIndex";
+import { BannerCel } from "../components/promos/BannerCel";
 import { Destacadas } from "../components/entity/HighlightComponent";
 import { CTA } from "../components/CTA";
 import { Entity } from "../interfaces/index";
 import fetch from "isomorphic-fetch";
+import { Stack, HStack, VStack, Box } from "@chakra-ui/core";
 
 type Props = {
   items: Entity[];
@@ -26,9 +28,18 @@ const Index = ({ items }: Props) => {
       </Head>
       <Container>
         <Hero />
+
         <CarouselIndex />
+
         {/* <DarkModeSwitch /> */}
-        <Destacadas items={items} />
+        <VStack spacing={1}>
+          <Box>
+            <Destacadas items={items} />
+          </Box>
+          <Box>
+            <BannerCel />
+          </Box>
+        </VStack>
         <CTA />
       </Container>
     </>
