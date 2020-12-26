@@ -8,7 +8,7 @@ import { Destacadas } from "../components/entity/HighlightComponent";
 import { CTA } from "../components/CTA";
 import { Entity } from "../interfaces/index";
 import fetch from "isomorphic-fetch";
-import { Stack, HStack, VStack, Box } from "@chakra-ui/core";
+import { VStack, Box } from "@chakra-ui/core";
 
 type Props = {
   items: Entity[];

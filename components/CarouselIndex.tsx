@@ -5,13 +5,12 @@ import {
   HStack,
   Image,
   Heading,
-  Center,
   List,
   ListItem,
   ListIcon,
 } from "@chakra-ui/core";
 import { FaHamburger, FaHandsHelping } from "react-icons/fa";
-import { Carousel, CarouselItem } from "react-bootstrap";
+import { Carousel } from "react-bootstrap";
 import { MdLocalPharmacy, MdAddCircle } from "react-icons/md";
 // import Image from "next/image";
 

@@ -1,6 +1,13 @@
-import { Box, Link as ChakraLink, Text, IconButton } from "@chakra-ui/core";
+import {
+  Box,
+  Link as ChakraLink,
+  Text,
+  IconButton,
+  HStack,
+} from "@chakra-ui/core";
 import { FaHamburger, FaHandsHelping } from "react-icons/fa";
-import { BiHealth } from "react-icons/bi";
+import { GiHealthNormal } from "react-icons/gi";
+import { FaStore } from "react-icons/fa";
 
 export const Category = () => (
   <Box
@@ -26,7 +33,7 @@ export const Category = () => (
           colorScheme="red"
           aria-label="Salud"
           fontSize="30px"
-          icon={<BiHealth />}
+          icon={<GiHealthNormal />}
         />
         <Text textAlign="center" color="white">
           Salud
@@ -62,8 +69,26 @@ export const Category = () => (
           fontSize="30px"
           icon={<FaHandsHelping />}
         />
-        <Text textAlign="center" color="white">
+        <Text textAlign="left" color="white">
           Servicios
+        </Text>
+      </Box>
+    </ChakraLink>
+    <ChakraLink href="/comercios">
+      <Box>
+        <IconButton
+          borderRadius="full"
+          bg="white"
+          size="lg"
+          variant="outline"
+          colorScheme="red"
+          aria-label="Servicios"
+          fontSize="30px"
+          textAlign="left"
+          icon={<FaStore />}
+        />
+        <Text textAlign="left" color="white">
+          Comercios
         </Text>
       </Box>
     </ChakraLink>

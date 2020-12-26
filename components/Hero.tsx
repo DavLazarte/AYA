@@ -1,8 +1,5 @@
-import { Flex, Heading, Box, Center, Text } from "@chakra-ui/core";
-import { Search } from "../components/Search";
+import { Flex, Heading, Box, Text } from "@chakra-ui/core";
 import { Category } from "../components/CarouselCategory";
-import { GetStaticProps } from "next";
-import { Carousel, CarouselItem } from "react-bootstrap";
 
 export const Hero = () => {
   return (
@@ -33,9 +30,6 @@ export const Hero = () => {
           </Text>
           hora
         </Heading>
-        {/* <Center>
-          <Search items={items} />
-        </Center> */}
       </Box>
       <Category />
     </Flex>
