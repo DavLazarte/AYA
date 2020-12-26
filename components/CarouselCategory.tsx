@@ -74,7 +74,7 @@ export const Category = () => (
         </Text>
       </Box>
     </ChakraLink>
-    <ChakraLink href="/comercios">
+    <ChakraLink href="/comercio">
       <Box>
         <IconButton
           borderRadius="full"
