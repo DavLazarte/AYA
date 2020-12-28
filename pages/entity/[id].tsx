@@ -131,7 +131,7 @@ const Local = ({ items }: Props) => {
               </ListItem>
               <ListItem>
                 <ChakraLink
-                  href={`https://wa.me/${items.contact.cellphone}?text=Hola!%20te%20encontre%20en%20aqui%20y%20ahora`}
+                  href={`https://wa.me/54${items.contact.cellphone}?text=Hola!%20te%20encontre%20en%20aqui%20y%20ahora`}
                   isExternal>
                   <ListIcon as={FaWhatsapp} color="green.500" />
                   {items.contact.cellphone}

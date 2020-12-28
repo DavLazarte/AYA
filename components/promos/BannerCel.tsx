@@ -41,7 +41,7 @@ export const BannerCel = () => (
             </Heading>
 
             <ChakraLink
-              href="https://wa.me/3863515328?text=Hola!%20te%20encontre%20en%20aqui%20y%20ahora"
+              href="https://wa.me/543863515328?text=Hola!%20te%20encontre%20en%20aqui%20y%20ahora"
               isExternal>
               <Heading
                 pt="8px"
