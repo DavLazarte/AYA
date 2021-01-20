@@ -6,6 +6,7 @@ import { CTA } from "../components/CTA";
 import { Container } from "../components/Container";
 import { Locales } from "../components/entity/EntityComponent";
 import fetch from "isomorphic-fetch";
+import { Heading } from "@chakra-ui/core";
 
 type Props = {
   items: Entity[];
@@ -15,7 +16,9 @@ const BaresPage = ({ items }: Props) => {
   return (
     <>
       <Head>
-        <title>Bares y Resto</title>
+        {items.map((item, i) => (
+          <title key={i}>{item.categories.toString().replace(",", "-")}</title>
+        ))}
         <link
           rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/flatly/bootstrap.min.css"
@@ -26,6 +29,9 @@ const BaresPage = ({ items }: Props) => {
       </Head>
       <Container>
         <NavBar />
+        <Heading as="h6" size="md" m={[3, 5, 7, 9]}>
+          Bares y Deliveries
+        </Heading>
         <Locales items={items} />
         <CTA />
       </Container>

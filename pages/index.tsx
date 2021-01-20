@@ -26,7 +26,7 @@ const Index = ({ items }: Props) => {
           href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap"
           rel="stylesheet"></link>
       </Head>
-      <Container>
+      <Container mb={12}>
         <Hero />
 
         <CarouselIndex />

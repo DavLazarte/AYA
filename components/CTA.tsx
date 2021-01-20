@@ -5,7 +5,7 @@ import { Container } from "../components/Container";
 export const CTA = () => (
   <Box
     flexDirection="row"
-    // position="fixed"
+    position="fixed"
     bottom="0"
     width="100%"
     as="nav"

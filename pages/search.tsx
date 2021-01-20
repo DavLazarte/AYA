@@ -31,11 +31,14 @@ const SearchPage = ({ items }: Props) => {
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
   };
-
   const results = !searchTerm
     ? []
-    : items.filter((local) =>
-        local.name.toLowerCase().includes(searchTerm.toLocaleLowerCase())
+    : items.filter(
+        (local) =>
+          local.name.toLowerCase().includes(searchTerm.toLocaleLowerCase())
+        // local.description
+        //   .toLowerCase()
+        //   .includes(searchTerm.toLocaleLowerCase())
       );
 
   return (
