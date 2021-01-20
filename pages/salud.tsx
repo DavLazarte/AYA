@@ -5,13 +5,33 @@ import NavBar from "../components/NavbarComponent";
 import { CTA } from "../components/CTA";
 import { Container } from "../components/Container";
 import { Locales } from "../components/entity/EntityComponent";
-import { Heading } from "@chakra-ui/core";
+import {
+  Heading,
+  Tabs,
+  TabList,
+  TabPanels,
+  Tab,
+  TabPanel,
+  SimpleGrid,
+} from "@chakra-ui/core";
 import fetch from "isomorphic-fetch";
 type Props = {
   items: Entity[];
 };
 
 const SaludPage = ({ items }: Props) => {
+  const farma = items.filter((local) =>
+    local.subcategories.toString().includes("farmacia")
+  );
+  const estetic = items.filter((local) =>
+    local.subcategories.toString().includes("centro de estetica")
+  );
+  const centrosm = items.filter((local) =>
+    local.subcategories.toString().includes("centro medico")
+  );
+  const psico = items.filter((local) =>
+    local.subcategories.toString().includes("psicologia")
+  );
   return (
     <>
       <Head>
@@ -31,7 +51,35 @@ const SaludPage = ({ items }: Props) => {
         <Heading as="h6" size="md" m={[3, 5, 7, 9]}>
           Servicios de Salud
         </Heading>
-        <Locales items={items} />
+        <Tabs
+          isLazy
+          align="center"
+          size="sm"
+          variant="soft-rounded"
+          colorScheme="red">
+          <TabList>
+            <SimpleGrid columns={3} spacing={1}>
+              <Tab>farmacias</Tab>
+              <Tab>Esteticas</Tab>
+              <Tab>Centros Medicos</Tab>
+              <Tab>Psicologia</Tab>
+            </SimpleGrid>
+          </TabList>
+          <TabPanels>
+            <TabPanel>
+              <Locales items={farma} />
+            </TabPanel>
+            <TabPanel>
+              <Locales items={estetic} />
+            </TabPanel>
+            <TabPanel>
+              <Locales items={centrosm} />
+            </TabPanel>
+            <TabPanel>
+              <Locales items={psico} />
+            </TabPanel>
+          </TabPanels>
+        </Tabs>
         <CTA />
       </Container>
     </>

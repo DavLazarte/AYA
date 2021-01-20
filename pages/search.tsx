@@ -35,10 +35,10 @@ const SearchPage = ({ items }: Props) => {
     ? []
     : items.filter(
         (local) =>
-          local.name.toLowerCase().includes(searchTerm.toLocaleLowerCase())
-        // local.description
-        //   .toLowerCase()
-        //   .includes(searchTerm.toLocaleLowerCase())
+          local.name.toLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
+          local.description
+            .toLowerCase()
+            .includes(searchTerm.toLocaleLowerCase())
       );
 
   return (

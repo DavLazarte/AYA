@@ -6,13 +6,33 @@ import { CTA } from "../components/CTA";
 import { Container } from "../components/Container";
 import { Locales } from "../components/entity/EntityComponent";
 import fetch from "isomorphic-fetch";
-import { Heading } from "@chakra-ui/core";
+import {
+  Heading,
+  Tabs,
+  TabList,
+  TabPanels,
+  Tab,
+  TabPanel,
+  SimpleGrid,
+} from "@chakra-ui/core";
 
 type Props = {
   items: Entity[];
 };
 
 const ServicesPage = ({ items }: Props) => {
+  const aa = items.filter((local) =>
+    local.subcategories.toString().includes("aires acondicionados")
+  );
+  const estetic = items.filter((local) =>
+    local.subcategories.toString().includes("centro de estetica")
+  );
+  const hogar = items.filter((local) =>
+    local.subcategories.toString().includes("hogar")
+  );
+  const profe = items.filter((local) =>
+    local.subcategories.toString().includes("profesor")
+  );
   return (
     <>
       <Head>
@@ -32,7 +52,35 @@ const ServicesPage = ({ items }: Props) => {
         <Heading as="h6" size="md" m={[3, 5, 7, 9]}>
           Servicios
         </Heading>
-        <Locales items={items} />
+        <Tabs
+          isLazy
+          align="center"
+          size="sm"
+          variant="soft-rounded"
+          colorScheme="red">
+          <TabList>
+            <SimpleGrid columns={3} spacing={1}>
+              <Tab>Aires Acondicionados</Tab>
+              <Tab>Belleza y estetica</Tab>
+              <Tab>Hogar</Tab>
+              <Tab>Profesores</Tab>
+            </SimpleGrid>
+          </TabList>
+          <TabPanels>
+            <TabPanel>
+              <Locales items={aa} />
+            </TabPanel>
+            <TabPanel>
+              <Locales items={estetic} />
+            </TabPanel>
+            <TabPanel>
+              <Locales items={hogar} />
+            </TabPanel>
+            <TabPanel>
+              <Locales items={profe} />
+            </TabPanel>
+          </TabPanels>
+        </Tabs>
         <CTA />
       </Container>
     </>
