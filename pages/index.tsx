@@ -8,12 +8,15 @@ import { Destacadas } from "../components/entity/HighlightComponent";
 import { CTA } from "../components/CTA";
 import { Entity } from "../interfaces/index";
 import fetch from "isomorphic-fetch";
-import { VStack, Box } from "@chakra-ui/core";
+import { VStack, Box, Center, Heading } from "@chakra-ui/core";
 
 type Props = {
   items: Entity[];
 };
 const Index = ({ items }: Props) => {
+  const farma = items.filter((local) =>
+    local.subcategories.toString().includes("farmacia")
+  );
   return (
     <>
       <Head>
@@ -28,12 +31,19 @@ const Index = ({ items }: Props) => {
       </Head>
       <Container mb={12}>
         <Hero />
-
-        <CarouselIndex />
-
         {/* <DarkModeSwitch /> */}
-        <VStack spacing={0.25}>
+        <CarouselIndex />
+        <VStack mt={[80]} spacing={0.25}>
           <Box>
+            <Center>
+              <Heading>Hoy de Turno</Heading>
+            </Center>
+            <Destacadas items={farma} />
+          </Box>
+          <Box>
+            <Center>
+              <Heading>Destacados</Heading>
+            </Center>
             <Destacadas items={items} />
           </Box>
           <Box>
