@@ -30,8 +30,10 @@ const ComercioPage = ({ items }: Props) => {
   const kiosco = items.filter((local) =>
     local.subcategories.toString().includes("drugstore")
   );
-  const ventas = items.filter((local) =>
-    local.subcategories.toString().includes("venta")
+  const ventas = items.filter(
+    (local) =>
+      local.subcategories.toString().includes("venta") ||
+      local.subcategories.toString().includes("tecnologia")
   );
   const arte = items.filter((local) =>
     local.subcategories.toString().includes("artesania")
