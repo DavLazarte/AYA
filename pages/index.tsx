@@ -20,7 +20,32 @@ const Index = ({ items }: Props) => {
   return (
     <>
       <Head>
-        <title>AquiYAhora</title>
+        <meta charSet="utf-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+          name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
+        />
+        <meta name="description" content="Description" />
+        <meta name="keywords" content="Keywords" />
+
+        <link rel="manifest" href="/manifest.json" />
+        <link
+          href="/icons/icon-192.png"
+          rel="icon"
+          type="image/png"
+          sizes="192x192"
+        />
+        <link
+          href="/icons/icon-512.png"
+          rel="icon"
+          type="image/png"
+          sizes="512x512"
+        />
+
+        <link rel="apple-touch-icon" href="/apple-icon.png"></link>
+        <meta name="theme-color" content="#ff0036" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
         <link
           rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/flatly/bootstrap.min.css"
@@ -28,6 +53,7 @@ const Index = ({ items }: Props) => {
         <link
           href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap"
           rel="stylesheet"></link>
+        <title>AquiYAhora</title>
       </Head>
       <Container mb={12}>
         <Hero />

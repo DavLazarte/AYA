@@ -28,7 +28,7 @@ type Props = {
 };
 const SearchPage = ({ items }: Props) => {
   const [searchTerm, setSearchTerm] = useState("");
-  const handleChange = (event) => {
+  const handleChange = (event: any) => {
     setSearchTerm(event.target.value);
   };
   const results = !searchTerm

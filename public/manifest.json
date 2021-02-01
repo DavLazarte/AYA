@@ -1,0 +1,23 @@
+{
+    "name": "AquiYAhora PWA",
+    "short_name": "aYa PWA",
+    "description": "Todo lo que buscas cuando lo buscas",
+    "icons": [
+        {
+          "src": "/icons/ayaicon-192.png",
+          "type": "image/png",
+          "sizes": "192x192"
+        },
+        {
+          "src": "/icons/ayaicon-512.png",
+          "type": "image/png",
+          "sizes": "512x512"
+        }
+      ],
+    "theme_color": "#ff0036",
+    "background_color": "#cfd7dd",
+    "display": "standalone",
+    "orientation": "portrait",
+    "scope": "/",
+    "start_url": "/"
+  }

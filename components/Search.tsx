@@ -20,19 +20,19 @@ type Props = {
 };
 
 export const Search = ({ items }: Props) => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const handleChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
-  const results = !searchTerm
-    ? []
-    : items.filter(
-        (local) =>
-          local.name.toLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
-          !local.description
-            .toLowerCase()
-            .includes(searchTerm.toLocaleLowerCase())
-      );
+  // const [searchTerm, setSearchTerm] = useState("");
+  // const handleChange = (event) => {
+  //   setSearchTerm(event.target.value);
+  // };
+  // const results = !searchTerm
+  //   ? []
+  //   : items.filter(
+  //       (local) =>
+  //         local.name.toLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
+  //         !local.description
+  //           .toLowerCase()
+  //           .includes(searchTerm.toLocaleLowerCase())
+  //     );
   return (
     <Flex mt={[2, 4, 6, 8]} justify="center">
       <Stack spacing={4}>
@@ -42,21 +42,16 @@ export const Search = ({ items }: Props) => {
               pointerEvents="none"
               children={<MdSearch color="green.500" />}
             />
-            <Input
-              variant="filled"
-              placeholder="Busca aqui y ahora"
-              value={searchTerm}
-              onChange={handleChange}
-            />
+            <Input variant="filled" placeholder="Busca aqui y ahora" />
           </InputGroup>
         </Box>
       </Stack>
       <Box>
-        <List spacing={3}>
+        {/* <List spacing={3}>
           {results.map((s, i) => (
             <ListItem key={i}>{s.name}</ListItem>
           ))}
-        </List>
+        </List> */}
       </Box>
       {/* <Text
         pos="absolute"

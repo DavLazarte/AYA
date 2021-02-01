@@ -25,22 +25,22 @@ const Entities = ({ items }: Props) => {
       </Head>
       <Container>
         <NavBar />
-        <Locales items={items} />
+        {/* <Locales items={items} /> */}
         <CTA />
       </Container>
     </>
   );
 };
 
-Entities.getInitialProps = async (ctx) => {
-  if (process.env.ENV == "dev") {
-    const res = await fetch("http://localhost:4000/entities");
-    const resJSON = await res.json();
-    return { items: resJSON };
-  } else {
-    const res = await fetch("https://api-aya.herokuapp.com/entities");
-    const resJSON = await res.json();
-    return { items: resJSON };
-  }
-};
+// Entities.getInitialProps = async () => {
+//   if (process.env.ENV == "dev") {
+//     const res = await fetch("http://localhost:4000/entities");
+//     const resJSON = await res.json();
+//     return { items: resJSON };
+//   } else {
+//     const res = await fetch("https://api-aya.herokuapp.com/entities");
+//     const resJSON = await res.json();
+//     return { items: resJSON };
+//   }
+// };
 export default Entities;
